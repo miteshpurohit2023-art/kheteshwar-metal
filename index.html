@@ -547,17 +547,31 @@
             });
         });
     </script>
-<a href="https://api.whatsapp.com/send?phone=917600664934&text=Hello%20Mitesh%20Purohit,%20I%20am%20interested%20in%20your%20metal%20products"
-target="_blank"
-class="fixed bottom-5 right-5 bg-green-500 hover:bg-green-600 text-white px-5 py-3 rounded-full shadow-lg z-50">
-    <i class="fab fa-whatsapp mr-2"></i> Chat on WhatsApp
-</a>
+<!-- Floating Call + WhatsApp Buttons -->
+<div class="fixed bottom-5 right-5 flex flex-col gap-3 z-50">
+
+  <!-- Call Button -->
+  <a href="tel:7600664934"
+     class="bg-blue-500 hover:bg-blue-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center">
+    <i class="fas fa-phone text-xl"></i>
+  </a>
+
+  <!-- WhatsApp Button -->
+  <a href="https://api.whatsapp.com/send?phone=917600664934&text=Hello%20Mitesh%20Purohit,%20I%20am%20interested%20in%20your%20metal%20products"
+     target="_blank"
+     class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+</div>
+
 
 
 
 </body>
 
 </html>
+
 
 
 
