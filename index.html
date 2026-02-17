@@ -385,13 +385,13 @@
                 </div>
                 
                 <div class="lg:w-3/5 p-8 md:p-20">
-                    <form id="inquiryForm" class="space-y-6">
+                    <form id="inquiryForm" action="https://formspree.io/f/mdalzyqz" method="POST" class="space-y-6">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <input type="text" placeholder="Full Name" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none">
-                            <input type="tel" placeholder="Contact Number" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none">
+                            <input type="text"  name="full_name" placeholder="Full Name" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none">
+                            <input type="tel" name="contact_number" placeholder="Contact Number" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none">
                         </div>
                         
-                        <select class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none cursor-pointer">
+                        <select name="material_grade" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none cursor-pointer">
                             <option value="" disabled selected>Choose material grade...</option>
                             <option value="ss-202">SS 202</option>
                             <option value="ss-304">SS 304</option>
@@ -406,7 +406,7 @@
                             <option value="others">Others</option>
                         </select>
 
-                        <textarea placeholder="Specify details" rows="3" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
+                        <textarea name="details"  placeholder="Specify details" rows="3" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
                         <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 rounded-xl transition-all">
                             SEND INQUIRY
                         </button>
@@ -509,5 +509,6 @@
 </body>
 
 </html>
+
 
 
