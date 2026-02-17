@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kheteshwar Metal | Premium Metal Supplier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #0f172a;
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        /* Logo Styling */
+        .km-logo {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-weight: 800;
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            margin-right: 10px;
+        }
+        @media (min-width: 768px) {
+            .km-logo { width: 45px; height: 45px; }
+        }
+
+        /* Automatic Slider */
+        .slider-container {
+            position: relative;
+            height: 85vh;
+            width: 100%;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .slider-container { height: 90vh; }
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 10;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.15);
+            transition: transform 8s linear;
+        }
+        .slide.active img {
+            transform: scale(1);
+        }
+
+        .hero-overlay {
+            background: radial-gradient(circle at center, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.9) 100%);
+        }
+
+        /* Nav Indicators */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link.active-nav {
+            color: #3b82f6 !important;
+        }
+        .nav-link.active-nav::after {
+            width: 100%;
+        }
+
+        .dot {
+            width: 30px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        @media (min-width: 768px) {
+            .dot { width: 40px; }
+        }
+
+        .dot-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: #3b82f6;
+        }
+        .dot.active .dot-progress {
+            width: 100%;
+            transition: width 6s linear;
+        }
+
+        /* Cards */
+        .metal-card-dark {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .metal-card-dark:hover {
+            transform: translateY(-8px);
+            border-color: rgba(59, 130, 246, 0.5);
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        .sticky-nav {
+            backdrop-filter: blur(16px);
+            background-color: rgba(15, 23, 42, 0.85);
+        }
+
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #3b82f6;
+            z-index: 100;
+            width: 0%;
+        }
+
+        .about-image-container {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            background-color: #1e293b;
+        }
+        @media (min-width: 768px) {
+            .about-image-container { border-radius: 2rem; }
+        }
+        
+        .about-image-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: inherit;
+            pointer-events: none;
+        }
+
+        select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+
+        option {
+            background-color: #0f172a;
+            color: white;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 border-b border-white/5 sticky-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 md:h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <div class="km-logo">KM</div>
+                    <div class="flex flex-col">
+                        <span class="text-lg md:text-2xl font-800 tracking-tighter text-white uppercase leading-none">Kheteshwar <span class="text-blue-500">Metal</span></span>
+                        <span class="text-[8px] md:text-[10px] text-slate-500 font-bold tracking-widest mt-0.5 md:mt-1">GSTIN: 24AKLFP2265MT2G</span>
+                    </div>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="nav-link text-slate-300 hover:text-white font-medium text-sm">Home</a>
+                    <a href="#about" class="nav-link text-slate-300 hover:text-white font-medium text-sm">About</a>
+                    <a href="#products" class="nav-link text-slate-300 hover:text-white font-medium text-sm">Products</a>
+                    <a href="#inquiry" class="bg-blue-600 text-white px-5 py-2 rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-900/40 font-bold text-sm">Inquiry</a>
+                </div>
+                <!-- Mobile Toggle -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-white p-2 focus:outline-none">
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-white/5 absolute w-full left-0 transition-all duration-300 shadow-2xl">
+            <div class="px-4 py-6 space-y-1">
+                <a href="#home" class="block text-slate-300 font-medium py-3 border-b border-white/5">Home</a>
+                <a href="#about" class="block text-slate-300 font-medium py-3 border-b border-white/5">About</a>
+                <a href="#products" class="block text-slate-300 font-medium py-3 border-b border-white/5">Products</a>
+                <a href="#inquiry" class="block text-blue-500 font-bold py-3">Inquiry Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="slider-container bg-slate-950">
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop" alt="Stainless Steel Coils">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000&auto=format&fit=crop" alt="Industrial Metal Pipes">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1530248259081-30cc8127394d?q=80&w=2000&auto=format&fit=crop" alt="Steel Manufacturing">
+        </div>
+
+        <div class="absolute inset-0 z-30 flex items-center justify-center text-center text-white px-6 hero-overlay">
+            <div class="max-w-4xl w-full">
+                <div class="inline-flex items-center gap-2 py-1.5 px-3 md:py-2 md:px-4 rounded-full bg-blue-600/20 border border-blue-600/30 text-blue-400 text-[10px] md:text-xs font-bold mb-6 md:mb-8 tracking-widest uppercase mx-auto">
+                    Premium Industrial Alloys
+                </div>
+                <h1 class="text-4xl md:text-8xl font-black mb-6 md:mb-8 leading-tight tracking-tighter">
+                    <span class="block text-white uppercase">Trusted Metal</span>
+                    <span class="block text-blue-500 uppercase">Supplier</span>
+                </h1>
+                <p class="text-sm md:text-2xl text-slate-400 mb-8 md:mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                    Distributing certified Stainless Steel, Carbon Steel, and High-Nickel Alloys for heavy industries.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
+                    <a href="#products" class="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg transition-all shadow-xl shadow-blue-600/40 flex items-center justify-center gap-2">
+                        View Products <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                    </a>
+                    <a href="#inquiry" class="bg-white/5 hover:bg-white/10 text-white backdrop-blur-md px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg border border-white/10 transition flex items-center justify-center">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 md:bottom-10 left-0 right-0 z-40 flex justify-center gap-3 md:gap-4">
+            <div onclick="goToSlide(0)" class="dot active"><div class="dot-progress"></div></div>
+            <div onclick="goToSlide(1)" class="dot"><div class="dot-progress"></div></div>
+            <div onclick="goToSlide(2)" class="dot"><div class="dot-progress"></div></div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 md:py-24 bg-slate-950 overflow-hidden border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="about-image-container group">
+                        <img src="https://images.unsplash.com/photo-1589793907316-f94025b46850?q=80&w=1200&auto=format&fit=crop" alt="Warehouse" class="w-full h-[350px] md:h-[500px] object-cover transition duration-1000 group-hover:scale-105">
+                        <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg md:rounded-xl shadow-2xl text-center">
+                            <span class="block text-xl md:text-2xl font-black leading-none">19+</span>
+                            <span class="text-[8px] font-bold uppercase tracking-widest opacity-80 leading-none">Years</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w-full lg:w-1/2">
+                    <div class="mb-8 text-center lg:text-left">
+                        <div class="text-blue-500 font-black uppercase tracking-[0.3em] text-[10px] md:text-xs mb-3 inline-block border-b border-blue-500/30 pb-2">Our Legacy</div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-5 leading-tight tracking-tight">Pioneering Metal <br><span class="text-blue-500">Solutions Since 2007</span></h2>
+                        <p class="text-slate-400 text-sm md:text-base leading-relaxed mb-6">
+                            Kheteshwar Metal is a premier stockist of high-performance alloys. We provide certified materials with full traceability for mission-critical industrial applications.
+                        </p>
+                    </div>
+                    
+                    <!-- Team Contacts -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="p-4 bg-white/5 border border-white/5 rounded-xl">
+                            <h4 class="text-white font-bold text-sm mb-1">Mr. Pravin G Rajpurohit</h4>
+                            <p class="text-blue-500 text-[8px] font-black uppercase tracking-widest mb-1">Managing Director</p>
+                            <p class="text-slate-400 text-[10px] font-semibold"><i class="fas fa-phone-alt mr-1 text-blue-600"></i> +91 98252 64934</p>
+                        </div>
+                        <div class="p-4 bg-white/5 border border-white/5 rounded-xl">
+                            <h4 class="text-white font-bold text-sm mb-1">Mr. Gautam G Rajpurohit</h4>
+                            <p class="text-blue-500 text-[8px] font-black uppercase tracking-widest mb-1">Sales Head</p>
+                            <p class="text-slate-400 text-[10px] font-semibold"><i class="fas fa-phone-alt mr-1 text-blue-600"></i> +91 94288 47226</p>
+                        </div>
+                        <div class="p-4 bg-white/5 border border-white/5 rounded-xl">
+                            <h4 class="text-white font-bold text-sm mb-1">Mr. Yogesh Patel</h4>
+                            <p class="text-blue-500 text-[8px] font-black uppercase tracking-widest mb-2">Accountant</p>
+                        </div>
+                        <div class="p-4 bg-blue-600/10 border border-blue-600/20 rounded-xl">
+                            <h4 class="text-white font-bold text-sm mb-1">Official Support</h4>
+                            <p class="text-blue-500 text-[8px] font-black uppercase tracking-widest mb-1">Email</p>
+                            <p class="text-slate-400 text-[10px] font-semibold"><i class="fas fa-envelope mr-1 text-blue-600"></i> kmvapi@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <!-- Address Highlight -->
+                    <div class="p-6 bg-slate-900 border border-blue-500/20 rounded-2xl">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-600/20 p-3 rounded-lg text-blue-500">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-1">Registered Office</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">
+                                    Plot No. 152/3, Sardar Chowk,<br>
+                                    G.I.D.C Vapi - 396195,<br>
+                                    Gujarat, India
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-20 bg-slate-900">
+        <div class="max-w-7xl mx-auto px-4 text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Core Inventory</h2>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm">Stockists of high-performance materials in all standard dimensions.</p>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+            <div class="metal-card-dark rounded-3xl p-8 group flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-blue-600/10 text-blue-500 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-500">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Pipes & Tubing</h3>
+                <p class="text-slate-500 text-sm">Seamless, Welded, and ERW sections in premium SS grades.</p>
+            </div>
+            <div class="metal-card-dark rounded-3xl p-8 group flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-blue-600/10 text-blue-500 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-500">
+                    <i class="fas fa-scroll"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Sheets & Plates</h3>
+                <p class="text-slate-500 text-sm">HR and CR sheets with custom finishes (Mirror, 2B, BA).</p>
+            </div>
+            <div class="metal-card-dark rounded-3xl p-8 group flex flex-col items-center text-center">
+                <div class="w-16 h-16 bg-blue-600/10 text-blue-500 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition duration-500">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <h3 class="text-xl font-bold text-white mb-3">Rounds & Flats</h3>
+                <p class="text-slate-500 text-sm">Precision-ground round bars for CNC machining.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form -->
+    <section id="inquiry" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="bg-slate-900 rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl border border-white/5">
+                <div class="lg:w-2/5 p-8 md:p-20 bg-gradient-to-br from-blue-700 to-blue-900 text-white">
+                    <h2 class="text-4xl font-black mb-6 uppercase leading-none">Get a <br>Quote</h2>
+                    <p class="text-white/70 mb-12">Our sales team provides detailed quotations with chemical reports.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-sm">
+                            <i class="fas fa-envelope opacity-70"></i>
+                            <span>kmvapi@gmail.com</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-sm">
+                            <i class="fas fa-map-marker-alt opacity-70"></i>
+                            <span>Vapi, Gujarat</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-3/5 p-8 md:p-20">
+                    <form id="inquiryForm" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Full Name" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none">
+                            <input type="tel" placeholder="Contact Number" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none">
+                        </div>
+                        
+                        <select class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none cursor-pointer">
+                            <option value="" disabled selected>Choose material grade...</option>
+                            <option value="ss-202">SS 202</option>
+                            <option value="ss-304">SS 304</option>
+                            <option value="ss-310">SS 310</option>
+                            <option value="ss-316">SS 316</option>
+                            <option value="ss-410">SS 410</option>
+                            <option value="ss-416">SS 416</option>
+                            <option value="ss-sheets">SS Sheets</option>
+                            <option value="aluminum">Aluminum</option>
+                            <option value="brass">Brass</option>
+                            <option value="copper">Copper</option>
+                            <option value="others">Others</option>
+                        </select>
+
+                        <textarea placeholder="Specify details" rows="3" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 rounded-xl transition-all">
+                            SEND INQUIRY
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-white py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left mb-12">
+                <div>
+                    <div class="flex items-center justify-center md:justify-start mb-6">
+                        <div class="km-logo">KM</div>
+                        <span class="text-xl font-black uppercase tracking-tighter">Kheteshwar <span class="text-blue-600">Metal</span></span>
+                    </div>
+                    <p class="text-slate-500 text-sm">Industrial metal supply specialists serving diverse engineering sectors since 2007.</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white mb-4 uppercase tracking-widest text-xs">Reach Us</h5>
+                    <p class="text-slate-500 text-sm mb-2"><i class="fas fa-envelope mr-2 text-blue-600"></i> kmvapi@gmail.com</p>
+                    <p class="text-slate-500 text-sm"><i class="fas fa-map-marker-alt mr-2 text-blue-600"></i> Vapi, Gujarat, India</p>
+                </div>
+                <div>
+                    <h5 class="font-bold text-white mb-4 uppercase tracking-widest text-xs">Compliance</h5>
+                    <p class="text-slate-500 text-sm mb-1">GSTIN: 24AKLFP2265MT2G</p>
+                    <p class="text-slate-500 text-[10px] mt-2">© 2026 Kheteshwar Metal. All Rights Reserved.</p>
+                </div>
+            </div>
+            <div class="border-t border-white/5 pt-8 text-center">
+                <p class="text-slate-700 text-[9px] font-bold uppercase tracking-[0.4em]">Plot No. 152/3 Sardar Chowk G.I.D.C Vapi 396195</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateSlider() {
+            slides.forEach((s, i) => {
+                s.classList.remove('active');
+                if (dots[i]) dots[i].classList.remove('active');
+            });
+            slides[slideIndex].classList.add('active');
+            if (dots[slideIndex]) {
+                void dots[slideIndex].offsetWidth; 
+                dots[slideIndex].classList.add('active');
+            }
+        }
+
+        function nextSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            slideIndex = index;
+            updateSlider();
+        }
+
+        setInterval(nextSlide, 6000);
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            menuIcon.className = isHidden ? 'fas fa-bars text-xl' : 'fas fa-times text-xl';
+        });
+
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section[id]');
+        const scrollProgress = document.getElementById('scroll-progress');
+
+        window.addEventListener('scroll', () => {
+            let winScroll = document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            scrollProgress.style.width = (winScroll / height) * 100 + "%";
+
+            let current = "";
+            sections.forEach(section => {
+                if (window.pageYOffset >= (section.offsetTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active-nav');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
