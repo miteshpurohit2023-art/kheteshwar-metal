@@ -7,6 +7,13 @@
     <title>Kheteshwar Metal | Stainless Steel & Alloy Supplier</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Disable text selection on entire website */
+* {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none;     /* IE 10+ */
+  user-select: none;         /* Standard */
+}
+
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
         
         body {
@@ -641,11 +648,16 @@
 </div>
 
 
-
+<script>
+  document.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  });
+</script>
 
 </body>
 
 </html>
+
 
 
 
