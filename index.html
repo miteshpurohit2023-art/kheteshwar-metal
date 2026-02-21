@@ -231,21 +231,30 @@
 
 
 
-/* ===== Direct Image Hover Glow (Guaranteed) ===== */
-
-/* Smooth animation */
-.about-image-container img {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+/* ===== Digital Neon Glow Frame (Permanent) ===== */
+.about-image-container {
+    position: relative;
     border-radius: 1.5rem;
+    overflow: hidden;
 }
 
-/* Hover directly on image */
-.about-image-container img:hover {
-    transform: translateY(-8px) scale(1.04);
-    box-shadow:
-        0 0 35px rgba(96,165,250,1),
-        0 0 80px rgba(96,165,250,0.7),
-        0 0 160px rgba(96,165,250,0.5);
+/* Glow border layer */
+.about-image-container::before {
+    content: "";
+    position: absolute;
+    inset: -3px;
+    border-radius: inherit;
+    background: linear-gradient(120deg, #3b82f6, #60a5fa, #2563eb);
+    filter: blur(18px);
+    opacity: 0.9;
+    z-index: 0;
+}
+
+/* Keep image above glow */
+.about-image-container img {
+    position: relative;
+    z-index: 1;
+    border-radius: 1.5rem;
 }
     </style>
 </head>
@@ -769,6 +778,7 @@
 </body>
 
 </html>
+
 
 
 
