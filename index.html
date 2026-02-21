@@ -229,30 +229,23 @@
         0 0 25px rgba(59,130,246,0.35),
         0 0 45px rgba(59,130,246,0.2);
 
- /* ===== FINAL Hover Neon Glow Border for About Image ===== */
-.about-image-container {
-    display: block;
-    position: relative;
-    border-radius: 1.5rem;
-    overflow: hidden;
-    border: 2px solid rgba(59,130,246,0.3);
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
-}
 
-/* FORCE visible hover effect */
-.about-image-container:hover {
-    transform: translateY(-6px);
+
+/* ===== Guaranteed Hover Glow (wrapper-based) ===== */
+.about-wrapper:hover .about-image-container {
+    transform: translateY(-10px) scale(1.01);
     border: 2px solid #60a5fa;
     box-shadow:
-        0 0 25px rgba(96,165,250,0.9),
-        0 0 60px rgba(96,165,250,0.7),
-        0 0 120px rgba(96,165,250,0.5);
-}
-/* Ensure badge doesn’t block hover */
-.about-image-container > div {
-    pointer-events: none;
+        0 0 35px rgba(96,165,250,1),
+        0 0 80px rgba(96,165,250,0.7),
+        0 0 160px rgba(96,165,250,0.5);
+    transition: all 0.4s ease;
 }
 
+.about-wrapper:hover .about-image-container img {
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
+}
     </style>
 </head>
 <body>
@@ -343,7 +336,7 @@
     <section id="about" class="py-16 md:py-24 bg-slate-950  border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
-                <div class="w-full lg:w-1/2 relative">
+                <div class="w-full lg:w-1/2 relative about-wrapper">
                     <div class="about-image-container group">
                        <img src="images/Aboutus.jpeg" alt="Kheteshwar Metal Shop" class="rounded-xl">                       
                          <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg md:rounded-xl text-center">                             
@@ -775,6 +768,7 @@
 </body>
 
 </html>
+
 
 
 
