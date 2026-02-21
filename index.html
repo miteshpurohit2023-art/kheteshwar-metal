@@ -231,47 +231,14 @@
 
 
 
-/* ===== Premium Digital Neon Glow Border ===== */
-
-.about-image-container {
-    position: relative;
-    border-radius: 1.5rem;
-    overflow: visible; /* Important */
-}
-
-.about-image-container img {
-    display: block;
-    width: 100%;
-    border-radius: 1.5rem;
-    position: relative;
-    z-index: 2;
-}
-
-/* Neon Glow Layer */
-.about-image-container::before {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    border-radius: 1.7rem;
-    background: linear-gradient(
-        120deg,
-        #3b82f6,
-        #2563eb,
-        #60a5fa,
-        #3b82f6
-    );
-    background-size: 300% 300%;
-    filter: blur(20px);
-    opacity: 0.9;
-    z-index: 1;
-    animation: neonMove 6s linear infinite;
-}
-
-/* Animated flowing glow */
-@keyframes neonMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* ===== Digital Glow Frame ===== */
+.glow-frame {
+  background: linear-gradient(135deg, #2563eb, #3b82f6, #60a5fa);
+  border-radius: 1rem;
+  box-shadow:
+    0 0 20px rgba(59,130,246,0.8),
+    0 0 40px rgba(59,130,246,0.5),
+    0 0 80px rgba(59,130,246,0.3);
 }
     </style>
 </head>
@@ -364,12 +331,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                 <div class="w-full lg:w-1/2 relative about-wrapper">
-                    <div class="about-image-container group">
-                       <img src="images/Aboutus.jpeg" alt="Kheteshwar Metal Shop" class="rounded-xl">                       
-                         <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg md:rounded-xl text-center">                             
-                             <span class="block text-xl md:text-2xl font-black leading-none">19+</span>
-                            <span class="text-[8px] font-bold uppercase tracking-widest opacity-80 leading-none">Years</span>
-                        </div>
+                    <div class="glow-frame p-[3px] rounded-2xl">
+                      <div class="rounded-2xl overflow-hidden relative">
+                       <img src="images/Aboutus.jpeg" alt="Kheteshwar Metal Shop" class="rounded-2xl w-full block">
+                         <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg md:rounded-xl text-center">
+                            <span class="block text-xl md:text-2xl font-black leading-none">19+</span>
+                                <span class="text-[8px] font-bold uppercase tracking-widest opacity-80 leading-none">Years</span>
+    </div>
+  </div>
+</div>
                     </div>
                 </div>
 
@@ -795,6 +765,7 @@
 </body>
 
 </html>
+
 
 
 
