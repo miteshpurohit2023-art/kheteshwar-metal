@@ -231,20 +231,21 @@
 
 
 
-/* ===== Guaranteed Hover Glow (wrapper-based) ===== */
-.about-wrapper:hover .about-image-container {
-    transform: translateY(-10px) scale(1.01);
-    border: 2px solid #60a5fa;
+/* ===== Direct Image Hover Glow (Guaranteed) ===== */
+
+/* Smooth animation */
+.about-image-container img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 1.5rem;
+}
+
+/* Hover directly on image */
+.about-image-container img:hover {
+    transform: translateY(-8px) scale(1.04);
     box-shadow:
         0 0 35px rgba(96,165,250,1),
         0 0 80px rgba(96,165,250,0.7),
         0 0 160px rgba(96,165,250,0.5);
-    transition: all 0.4s ease;
-}
-
-.about-wrapper:hover .about-image-container img {
-    transform: scale(1.05);
-    transition: transform 0.4s ease;
 }
     </style>
 </head>
@@ -768,6 +769,7 @@
 </body>
 
 </html>
+
 
 
 
