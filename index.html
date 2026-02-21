@@ -190,88 +190,28 @@
             color: white;
             padding: 8px;
         }
- /* ===== Futuristic Digital Hover Effect ===== */
+ /* ===== Digital Neon Border Only Hover Effect ===== */
 #products .bg-slate-900 {
     position: relative;
-    overflow: hidden;
     border-radius: 16px;
-    backdrop-filter: blur(8px);
     border: 1px solid rgba(59,130,246,0.15);
-    transition: transform 0.5s ease, box-shadow 0.5s ease, border 0.5s ease;
+    transition: transform 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Neon glow border */
-#products .bg-slate-900::after {
-    content: "";
-    position: absolute;
-    inset: -1px;
-    border-radius: inherit;
-    background: linear-gradient(120deg, transparent, rgba(59,130,246,0.6), transparent);
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 2;
-    pointer-events: none;
-}
-
-/* Shine sweep animation */
-#products .bg-slate-900::before {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: -100%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        120deg,
-        transparent 30%,
-        rgba(59,130,246,0.25),
-        transparent 70%
-    );
-    transform: rotate(25deg);
-    transition: all 0.7s ease;
-    opacity: 0;
-    z-index: 1;
-}
-
-/* Image zoom */
-#products .bg-slate-900 img {
-    transition: transform 0.7s ease;
-}
-
-/* Title styling */
-#products .bg-slate-900 h3 {
-    position: relative;
-    z-index: 3;
-    transition: all 0.4s ease;
-    letter-spacing: 0.5px;
-}
-
-/* Hover futuristic animation */
+/* Neon glowing border */
 #products .bg-slate-900:hover {
-    transform: translateY(-12px) scale(1.03);
-    border: 1px solid rgba(59,130,246,0.6);
-    box-shadow: 0 0 25px rgba(59,130,246,0.35),
-                0 0 60px rgba(59,130,246,0.15);
+    transform: translateY(-8px);
+    border: 1px solid rgba(59,130,246,0.9);
+    box-shadow: 
+        0 0 12px rgba(59,130,246,0.6),
+        0 0 25px rgba(59,130,246,0.4),
+        0 0 50px rgba(59,130,246,0.2);
 }
 
-#products .bg-slate-900:hover::after {
-    opacity: 1;
-}
-
-#products .bg-slate-900:hover::before {
-    top: 100%;
-    left: 100%;
-    opacity: 1;
-}
-
-#products .bg-slate-900:hover img {
-    transform: scale(1.12);
-}
-
+/* Optional: slight title glow */
 #products .bg-slate-900:hover h3 {
     color: #60a5fa;
-    text-shadow: 0 0 10px rgba(96,165,250,0.8);
-    transform: translateY(-3px);
+    text-shadow: 0 0 6px rgba(96,165,250,0.8);
 }
     </style>
 </head>
@@ -795,6 +735,7 @@
 </body>
 
 </html>
+
 
 
 
