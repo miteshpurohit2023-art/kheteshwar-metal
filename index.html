@@ -231,32 +231,27 @@
 
  /* ===== Hover Neon Glow Border for About Image ===== */
 .about-image-container {
+    display: inline-block; /* important */
     position: relative;
     border-radius: 1.5rem;
     overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
-    border: 1px solid rgba(59,130,246,0.15);
-    margin: 6px; /* 🔥 ADD THIS */
-
+    border: 1px solid rgba(59,130,246,0.2);
+    transition: all 0.4s ease;
 }
 
-.about-image-container:hover {
-    transform: translateY(-6px) scale(1.01);
-    border: 1px solid rgba(59,130,246,0.9);
+/* Glow when hovering image OR container */
+.about-image-container:hover,
+.about-image-container:hover img {
+    transform: translateY(-6px);
+    border: 1px solid rgba(59,130,246,1);
     box-shadow:
-        0 0 18px rgba(59,130,246,0.7),
-        0 0 40px rgba(59,130,246,0.45),
-        0 0 80px rgba(59,130,246,0.3);
+        0 0 25px rgba(59,130,246,0.8),
+        0 0 60px rgba(59,130,246,0.5),
+        0 0 120px rgba(59,130,246,0.35);
 }
-/* Optional subtle pulse animation */
-.about-image-container::before {
-    content: "";
-    position: absolute;
-    inset: -2px;
-    border-radius: inherit;
-    border: 1px solid rgba(59,130,246,0.4);
-    filter: blur(6px);
-    opacity: 0.7;
+
+/* Ensure hover reaches container even with badge */
+.about-image-container > div {
     pointer-events: none;
 }
 
@@ -347,14 +342,14 @@
     </section>
 
     <!-- About Us Section -->
-    <section id="about" class="py-16 md:py-24 bg-slate-950 overflow-hidden border-b border-white/5">
+    <section id="about" class="py-16 md:py-24 bg-slate-950  border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
                 <div class="w-full lg:w-1/2 relative">
                     <div class="about-image-container group">
-                    <img src="images/Aboutus.jpeg" alt="Kheteshwar Metal Shop" class="rounded-xl shadow-lg">
-                        <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg md:rounded-xl shadow-2xl text-center">
-                            <span class="block text-xl md:text-2xl font-black leading-none">19+</span>
+                       <img src="images/Aboutus.jpeg" alt="Kheteshwar Metal Shop" class="rounded-xl">                       
+                         <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg md:rounded-xl text-center">                             
+                             <span class="block text-xl md:text-2xl font-black leading-none">19+</span>
                             <span class="text-[8px] font-bold uppercase tracking-widest opacity-80 leading-none">Years</span>
                         </div>
                     </div>
@@ -782,6 +777,7 @@
 </body>
 
 </html>
+
 
 
 
