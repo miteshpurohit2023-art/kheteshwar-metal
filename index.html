@@ -231,15 +231,6 @@
 
 
 
-/* ===== Digital Glow Frame ===== */
-.glow-frame {
-  background: linear-gradient(135deg, #2563eb, #3b82f6, #60a5fa);
-  border-radius: 1rem;
-  box-shadow:
-    0 0 20px rgba(59,130,246,0.8),
-    0 0 40px rgba(59,130,246,0.5),
-    0 0 80px rgba(59,130,246,0.3);
-}
     </style>
 </head>
 <body>
@@ -329,17 +320,15 @@
     <!-- About Us Section -->
     <section id="about" class="py-16 md:py-24 bg-slate-950  border-b border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
-                <div class="w-full lg:w-1/2 relative about-wrapper">
-                    <div class="glow-frame p-[3px] rounded-2xl">
-                      <div class="rounded-2xl overflow-hidden relative">
-                       <img src="images/Aboutus.jpeg" alt="Kheteshwar Metal Shop" class="rounded-2xl w-full block">
-                         <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg md:rounded-xl text-center">
-                            <span class="block text-xl md:text-2xl font-black leading-none">19+</span>
-                                <span class="text-[8px] font-bold uppercase tracking-widest opacity-80 leading-none">Years</span>
-    </div>
-  </div>
-</div>
+         <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">                
+              <div class="relative">                    
+                <div class="about-image-container group">
+                      <img src="images/Aboutus.jpeg" alt="Kheteshwar Metal Shop" class="rounded-xl shadow-lg">
+                        <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg md:rounded-xl shadow-2xl text-center">
+                          <span class="block text-xl md:text-2xl font-black leading-none">19+</span>
+                            <span class="text-[8px] font-bold uppercase tracking-widest opacity-80 leading-none">Years</span>
+                            </div>
+                       </div>
                     </div>
                 </div>
 
