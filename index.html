@@ -303,6 +303,20 @@
         0 0 35px rgba(59,130,246,0.4),
         0 0 60px rgba(59,130,246,0.2);
 }
+        /* ===== Neon Glow Hover for About Image ===== */
+.image-glow {
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.image-glow:hover {
+    transform: translateY(-6px) scale(1.01);
+    border: 1px solid rgba(59,130,246,0.9);
+    box-shadow:
+        0 0 15px rgba(59,130,246,0.6),
+        0 0 35px rgba(59,130,246,0.4),
+        0 0 60px rgba(59,130,246,0.25);
+}
         </style>
        </head>
     <body>
@@ -398,7 +412,7 @@
 
       <!-- LEFT : IMAGE -->
       <div class="relative">
-        <div class="about-image-container group relative">
+          <div class="about-image-container image-glow group relative">
           <img src="images/Aboutus.jpeg"
                alt="Kheteshwar Metal Shop"
                class="rounded-xl shadow-lg w-full block">
@@ -835,6 +849,7 @@
 </body>
 
 </html>
+
 
 
 
