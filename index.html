@@ -316,129 +316,104 @@
             <div onclick="goToSlide(2)" class="dot"><div class="dot-progress"></div></div>
         </div>
     </section>
+    <section id="about" class="py-16 md:py-24 bg-slate-950 border-b border-white/5">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-    <!-- About Us Section -->
-    <section id="about" class="py-16 md:py-24 bg-slate-950  border-b border-white/5">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <!-- LEFT : IMAGE -->
+      <div class="relative">
+        <div class="about-image-container group relative">
+          <img src="images/Aboutus.jpeg"
+               alt="Kheteshwar Metal Shop"
+               class="rounded-xl shadow-lg w-full block">
 
-  <!-- LEFT : IMAGE -->
-  <div class="relative">
-    <div class="about-image-container group relative">
-      <img src="images/Aboutus.jpeg"
-           alt="Kheteshwar Metal Shop"
-           class="rounded-xl shadow-lg w-full block">
+          <!-- 19+ Badge -->
+          <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg shadow-2xl text-center">
+            <span class="block text-xl font-black leading-none">19+</span>
+            <span class="text-[8px] font-bold uppercase tracking-widest opacity-80 leading-none">Years</span>
+          </div>
+        </div>
+      </div>
 
-      <!-- 19+ Badge -->
-      <div class="absolute bottom-4 right-4 bg-blue-600 text-white p-3 rounded-lg md:rounded-xl shadow-2xl text-center">
-        <span class="block text-xl md:text-2xl font-black leading-none">19+</span>
-        <span class="text-[8px] font-bold uppercase tracking-widest opacity-80 leading-none">Years</span>
+      <!-- RIGHT : TEAM + SUPPORT GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+
+        <!-- Card 1 -->
+        <div class="p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex items-center gap-4">
+          <img src="images/pravin.jpeg" class="w-16 h-16 rounded-full object-cover border-2 border-blue-500" alt="">
+          <div>
+            <h4 class="text-white font-bold text-sm">Mr. Pravin G Rajpurohit</h4>
+            <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Managing Director</p>
+            <p class="text-slate-400 text-xs mt-1">+91 98252 64934</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex items-center gap-4">
+          <img src="images/gautam.jpeg" class="w-16 h-16 rounded-full object-cover border-2 border-blue-500" alt="">
+          <div>
+            <h4 class="text-white font-bold text-sm">Mr. Gautam G Rajpurohit</h4>
+            <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Sales Head</p>
+            <p class="text-slate-400 text-xs mt-1">+91 94288 47226</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex items-center gap-4">
+          <div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 text-2xl">
+            <i class="fas fa-user"></i>
+          </div>
+          <div>
+            <h4 class="text-white font-bold text-sm">Mr. Yogesh Patel</h4>
+            <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Accountant</p>
+            <p class="text-slate-400 text-xs mt-1 invisible">+91 00000 00000</p>
+          </div>
+        </div>
+
+        <!-- Official Support -->
+        <div class="p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex flex-col gap-5">
+          <div>
+            <h4 class="text-white font-bold mb-4 tracking-wider text-sm uppercase">Official Support</h4>
+
+            <p class="text-slate-300 text-sm mb-2">
+              <i class="fas fa-envelope text-blue-500 mr-2"></i>
+              kmvapi@gmail.com
+            </p>
+
+            <p class="text-slate-300 text-sm mb-4">
+              <i class="fas fa-phone text-green-500 mr-2"></i>
+              +91 97129 64934
+            </p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex justify-between items-center max-w-[160px]">
+            <a href="mailto:kmvapi@gmail.com"
+               class="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center text-white text-xl shadow-lg transition">
+               <i class="fas fa-envelope"></i>
+            </a>
+
+            <a href="tel:+919712964934"
+               class="w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 flex items-center justify-center text-white text-xl shadow-lg transition">
+               <i class="fas fa-phone"></i>
+            </a>
+          </div>
+
+          <!-- Address -->
+          <div class="bg-white/5 border border-white/10 rounded-lg p-4 text-sm text-slate-300">
+            <strong class="text-white block mb-1">Registered Office</strong>
+            Plot No. 152/3, Sardar Chowk,<br>
+            G.I.D.C Vapi - 396195,<br>
+            Gujarat, India
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-                <!-- RIGHT : TEAM + SUPPORT GRID -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+</section>
 
-  <!-- Card 1 -->
-  <div class="p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex items-center gap-4">
-    <img src="images/pravin.jpeg" class="w-16 h-16 rounded-full object-cover border-2 border-blue-500" alt="">
-    <div>
-      <h4 class="text-white font-bold text-sm">Mr. Pravin G Rajpurohit</h4>
-      <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Managing Director</p>
-      <p class="text-slate-400 text-xs mt-1">+91 98252 64934</p>
-    </div>
-  </div>
-
-  <!-- Card 2 -->
-  <div class="p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex items-center gap-4">
-    <img src="images/gautam.jpeg" class="w-16 h-16 rounded-full object-cover border-2 border-blue-500" alt="">
-    <div>
-      <h4 class="text-white font-bold text-sm">Mr. Gautam G Rajpurohit</h4>
-      <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Sales Head</p>
-      <p class="text-slate-400 text-xs mt-1">+91 94288 47226</p>
-    </div>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="p-4 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex items-center gap-4">
-    <div class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 text-2xl">
-      <i class="fas fa-user"></i>
-    </div>
-    <div>
-      <h4 class="text-white font-bold text-sm">Mr. Yogesh Patel</h4>
-      <p class="text-blue-500 text-[10px] font-bold uppercase tracking-widest">Accountant</p>
-      <p class="text-slate-400 text-xs mt-1 invisible">+91 00000 00000</p>
-    </div>
-  </div>
-    <!-- Official Support -->
-<div class="p-6 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl flex flex-col gap-5">
-
-  <div>
-    <h4 class="text-white font-bold mb-4 tracking-wider text-sm uppercase">Official Support</h4>
-
-    <p class="text-slate-300 text-sm mb-2">
-      <i class="fas fa-envelope text-blue-500 mr-2"></i>
-      kmvapi@gmail.com
-    </p>
-
-    <p class="text-slate-300 text-sm mb-4">
-      <i class="fas fa-phone text-green-500 mr-2"></i>
-      +91 97129 64934
-    </p>
-  </div>
-    <!-- Action Buttons -->
-<div class="flex justify-between items-center max-w-[160px]">
-  <!-- Mail Action -->
-  <a href="mailto:kmvapi@gmail.com"
-     class="w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center text-white text-xl shadow-lg transition">
-     <i class="fas fa-envelope"></i>
-  </a>
-
-  <!-- Call Action -->
-  <a href="tel:+919712964934"
-     class="w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 flex items-center justify-center text-white text-xl shadow-lg transition">
-     <i class="fas fa-phone"></i>
-  </a>
-</div>
-
-  
-  <!-- Address -->
-  <div class="bg-white/5 border border-white/10 rounded-lg p-4 text-sm text-slate-300">
-    <strong class="text-white block mb-1">Registered Office</strong>
-    Plot No. 152/3, Sardar Chowk,<br>
-    G.I.D.C Vapi - 396195,<br>
-    Gujarat, India
-  </div>
-    <!-- Testimonial Cards (keep inside your existing left column) -->
-<div class="grid grid-cols-3 gap-6 items-stretch">
-  
-  <!-- Card 1 -->
-  <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md flex flex-col h-full">
-    <div class="text-yellow-400 mb-3 text-lg">★★★★★</div>
-    <p class="text-slate-300 text-sm leading-relaxed flex-grow">
-      Best stainless steel and alloy supplier in Vapi with excellent product quality.
-    </p>
-  </div>
-
-  <!-- Card 2 -->
-  <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md flex flex-col h-full">
-    <div class="text-yellow-400 mb-3 text-lg">★★★★★</div>
-    <p class="text-slate-300 text-sm leading-relaxed flex-grow">
-      Timely delivery and very professional service. Highly recommended supplier.
-    </p>
-  </div>
-
-  <!-- Card 3 -->
-  <div class="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md flex flex-col h-full">
-    <div class="text-yellow-400 mb-3 text-lg">★★★★★</div>
-    <p class="text-slate-300 text-sm leading-relaxed flex-grow">
-      Trusted metal supplier in Vapi for pipes, sheets and industrial materials.
-    </p>
-  </div>
-
-</div>
-
-
+    
  
   
     <!-- Products -->
@@ -683,6 +658,7 @@
 </body>
 
 </html>
+
 
 
 
