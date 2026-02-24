@@ -276,7 +276,19 @@
         0 0 60px rgba(59,130,246,0.2);
 }
    
-   
+   /* ===== Neon Glow Hover for Hero Buttons ===== */
+.hero-btn {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.7),
+        0 0 25px rgba(59,130,246,0.4),
+        0 0 45px rgba(59,130,246,0.25);
+}
     
         </style>
        </head>
@@ -349,10 +361,14 @@
                     Distributing certified Stainless Steel, Carbon Steel, and High-Nickel Alloys for heavy industries.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4 md:gap-6">
-                    <a href="#products" class="group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg transition-all shadow-xl shadow-blue-600/40 flex items-center justify-center gap-2">
-                        View Products <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                  <a href="#products"
+                  class="hero-btn group bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg transition-all shadow-xl shadow-blue-600/40 flex items-center justify-center gap-2">
+                  View Products <i class="fas fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                </a>
+                    <a href="#inquiry"
+                    class="hero-btn bg-white/5 hover:bg-white/10 text-white backdrop-blur-md px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg border border-white/10 transition flex items-center justify-center">
+                    Contact Sales
                     </a>
-                    <a href="#inquiry" class="bg-white/5 hover:bg-white/10 text-white backdrop-blur-md px-8 py-4 md:px-10 md:py-5 rounded-xl md:rounded-2xl font-bold text-base md:text-lg border border-white/10 transition flex items-center justify-center">Contact Sales</a>
                 </div>
             </div>
         </div>
@@ -803,6 +819,7 @@
 </body>
 
 </html>
+
 
 
 
