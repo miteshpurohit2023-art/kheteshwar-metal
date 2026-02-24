@@ -317,6 +317,20 @@
         0 0 35px rgba(59,130,246,0.4),
         0 0 60px rgba(59,130,246,0.25);
 }
+
+        /* ===== Neon Glow Hover for Buttons ===== */
+.glow-btn {
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glow-btn:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.7),
+        0 0 25px rgba(59,130,246,0.4),
+        0 0 45px rgba(59,130,246,0.25);
+}
         </style>
        </head>
     <body>
@@ -586,12 +600,9 @@
     <div class="flex flex-col sm:flex-row justify-center gap-4">
 
       <!-- Get Directions -->
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Kheteshwar+Metal+Vapi"
+     <a href="https://www.google.com/maps/dir/?api=1&destination=Kheteshwar+Metal+Vapi"
    target="_blank"
-   class="flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-sm shadow-lg transition">
-  <i class="fas fa-map-marker-alt"></i>
-  Get Directions
-</a>
+   class="glow-btn flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold text-sm shadow-lg transition">
 
      
 
@@ -849,6 +860,7 @@
 </body>
 
 </html>
+
 
 
 
