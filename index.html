@@ -260,6 +260,21 @@
         0 0 35px rgba(59,130,246,0.4),
         0 0 60px rgba(59,130,246,0.2);
 }
+
+        /* ===== Neon Glow Hover for Inquiry Section ===== */
+.inquiry-glow {
+    position: relative;
+    transition: transform 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+}
+
+.inquiry-glow:hover {
+    transform: translateY(-6px);
+    border: 1px solid rgba(59,130,246,0.9);
+    box-shadow:
+        0 0 15px rgba(59,130,246,0.6),
+        0 0 35px rgba(59,130,246,0.4),
+        0 0 60px rgba(59,130,246,0.2);
+}
    
    
     
@@ -618,7 +633,7 @@
     <!-- Inquiry Form -->
     <section id="inquiry" class="py-20 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="bg-slate-900 rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl border border-white/5">
+            <div class="inquiry-glow bg-slate-900 rounded-3xl overflow-hidden flex flex-col lg:flex-row shadow-2xl border border-white/5">
                 <div class="lg:w-2/5 p-8 md:p-20 bg-gradient-to-br from-blue-700 to-blue-900 text-white">
                     <h2 class="text-4xl font-black mb-6 uppercase leading-none">Get a <br>Quote</h2>
                     <p class="text-white/70 mb-12">Our sales team provides detailed quotations with chemical reports.</p>
@@ -788,6 +803,7 @@
 </body>
 
 </html>
+
 
 
 
