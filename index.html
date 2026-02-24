@@ -228,12 +228,26 @@
         0 0 12px rgba(59,130,246,0.6),
         0 0 25px rgba(59,130,246,0.35),
         0 0 45px rgba(59,130,246,0.2);
+    /* ===== Neon Digital Border for Testimonials ===== */
+#testimonials .rounded-2xl {
+    position: relative;
+    border: 1px solid rgba(59,130,246,0.15);
+    transition: transform 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+}
 
+#testimonials .rounded-2xl:hover {
+    transform: translateY(-6px);
+    border: 1px solid rgba(59,130,246,0.9);
+    box-shadow:
+        0 0 12px rgba(59,130,246,0.6),
+        0 0 25px rgba(59,130,246,0.35),
+        0 0 45px rgba(59,130,246,0.2);
+}
 
-
-    </style>
-</head>
-<body>
+    
+        </style>
+       </head>
+    <body>
 
     <div id="scroll-progress"></div>
 
@@ -756,6 +770,7 @@
 </body>
 
 </html>
+
 
 
 
