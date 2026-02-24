@@ -318,18 +318,18 @@
         0 0 60px rgba(59,130,246,0.25);
 }
 
-        /* ===== Neon Glow Hover for Buttons ===== */
+       /* ===== Universal Neon Glow Hover for Buttons ===== */
 .glow-btn {
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glow-btn:hover {
-    transform: translateY(-4px);
-    box-shadow:
-        0 0 12px rgba(59,130,246,0.7),
-        0 0 25px rgba(59,130,246,0.4),
-        0 0 45px rgba(59,130,246,0.25);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 0 12px rgba(59,130,246,0.8),
+    0 0 25px rgba(59,130,246,0.5),
+    0 0 45px rgba(59,130,246,0.25);
 }
         </style>
        </head>
@@ -731,9 +731,10 @@
                         </select>
 
                         <textarea name="details"  placeholder="Specify details" rows="3" class="w-full bg-slate-800 border-none px-6 py-4 rounded-xl text-white focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 rounded-xl transition-all">
-                            SEND INQUIRY
-                        </button>
+                        <button type="submit"
+                       class="glow-btn w-full bg-blue-600 hover:bg-blue-700 text-white font-black py-5 rounded-xl transition-all">
+                       SEND INQUIRY
+                       </button>
                     </form>
                 </div>
             </div>
@@ -839,16 +840,15 @@
   
   <!-- Call -->
   <a href="tel:+919712964934"
-     class="bg-blue-600 hover:bg-blue-700 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center">
-     <i class="fas fa-phone text-xl"></i>
+   class="glow-btn bg-blue-600 hover:bg-blue-700 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center">
   </a>
 
   <!-- WhatsApp -->
-  <a href="https://wa.me/919712964934"
-     target="_blank"
-     class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center">
-     <i class="fab fa-whatsapp text-xl"></i>
-  </a>
+  
+   <a href="https://wa.me/919712964934"
+   target="_blank"
+   class="glow-btn bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center">
+     </a>
 
 </div>
 
@@ -862,6 +862,7 @@
 </body>
 
 </html>
+
 
 
 
