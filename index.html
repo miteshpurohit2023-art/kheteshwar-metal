@@ -289,7 +289,20 @@
         0 0 25px rgba(59,130,246,0.4),
         0 0 45px rgba(59,130,246,0.25);
 }
-    
+
+        /* Glow effect for testimonial heading box */
+.testimonial-heading-box {
+    transition: transform 0.4s ease, border 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-heading-box:hover {
+    transform: translateY(-6px);
+    border: 1px solid rgba(59,130,246,0.9);
+    box-shadow:
+        0 0 15px rgba(59,130,246,0.6),
+        0 0 35px rgba(59,130,246,0.4),
+        0 0 60px rgba(59,130,246,0.2);
+}
         </style>
        </head>
     <body>
@@ -480,14 +493,14 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Heading -->
-    <div class="text-center mb-14">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
-        What Our Clients Say
-      </h2>
-      <p class="text-slate-400 max-w-2xl mx-auto text-sm">
-        Trusted by industries across Vapi for quality metals and timely delivery.
-      </p>
-    </div>
+    <div class="testimonial-heading-box text-center mb-14 px-8 py-10 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10">
+  <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">
+    What Our Clients Say
+  </h2>
+  <p class="text-slate-400 max-w-2xl mx-auto text-sm">
+    Trusted by industries across Vapi for quality metals and timely delivery.
+  </p>
+</div>
 
     <!-- Testimonial Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -819,6 +832,7 @@
 </body>
 
 </html>
+
 
 
 
